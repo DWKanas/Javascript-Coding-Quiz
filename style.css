@@ -41,3 +41,23 @@ h1 {
     border-radius: 8%;
     background-color: aqua;
 }
+
+#questionContainer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+#question {
+    font-size: 30px;
+    
+}
+
+#startBtn {
+    font-size: 50px;
+}
+
+#Btn {
+    font-size: 20px;
+}

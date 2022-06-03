@@ -1,23 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel = "stylesheet" href = "style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Javascript Coding Quiz</title>
-</head>
-<body>
-    <nav class = "navContainer">
-        <ul class = "navbarList">
-            <li class = "highScores">View High Scores</li>
-            <li class = "countdownTimer">Time:</li>
-
-        </ul>
+  </head>
+  <body>
+    <nav class="navContainer">
+      <ul class="navbarList">
+        <li class="highScores">View High Scores</li>
+        <li class="countdownTimer">Time:</li>
+      </ul>
     </nav>
-        <h1 class = "header">Coding Quiz Challenge!</h1>
-            <div class = "quizContainer"></div>
+    <h1 class="header">Coding Quiz Challenge!</h1>
+    <div class="quizContainer">
+    <div id="questionContainer">
+       <div id = "question">Question</div> 
 
-    <script text = "type/javascript" src ="script.js"> </script>  
-</body>
+    <button id="startBtn">Start</button>
+    <div class = btnGrid id = "answerBtns">
+    
+        <button id="Btn">Answer 1</button>
+        <button id="Btn">Answer 2</button>
+        <button id="Btn">Answer 3</button>
+        <button id="Btn">Answer 4</button>
+        </div>
+
+        </div>
+        </div>
+    <script text="type/javascript" src="script.js"></script>
+  </body>
 </html>
