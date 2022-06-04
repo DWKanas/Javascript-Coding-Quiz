@@ -26,7 +26,25 @@ var questions = [
             {text: "34", correct: false},
             {text: "8", correct: false}
         ]  
-      }
+    },
+    {
+        question: "What is 2-1?",
+        answers: [
+            {text: "1", correct: false},
+            {text: "0", correct: true},
+            {text: "56", correct: false},
+            {text: "idk", correct: false}
+        ]  
+    },
+    {
+        question: "What is 6*2?",
+        answers: [
+            {text: "12", correct: false},
+            {text: "83", correct: true},
+            {text: "2.3", correct: false},
+            {text: "no", correct: false}
+        ]  
+    }
 
 
 ]
@@ -37,12 +55,12 @@ function startGame() {
     shuffledQuestions = questions.sort(() => Math.random() - .5)
     currentQuestions = 0
     console.log("Started")
+    startButton.style.display = 'none'
     askQuestion()
 }
 
 function askQuestion() {
-    // var incomingArrays = JSON.stringify(questions[0])
-    // var incomingQuestions =JSON.parse(incomingArrays)
+    
     var getQuestions = (questions[0].question);
      questionElement.innerHTML = getQuestions
         btn1.innerHTML = questions[0].answers[0].text
@@ -55,33 +73,12 @@ function askQuestion() {
      btn4.setAttribute("data-choice", questions[0].answers[3].false)
      
      console.log(getQuestions)
-}//get attribute 
-
-
-// function showQuestion(question) {
-//     questionElement.innerText = question.question
-//     question.answers.forEach(answer =>{
-//         var button = document.createElement("button")
-//         button.innerText = answer.text
-//         button.classList.add("btn")
-//         button.addEventListener("click", selectAnswer)
-//         answerButtonsElement.appendChild(button)
-        
-//     })
-
-// }
+}
 
 
 
-// function selectAnswer(e) {
-//     var selectedButton = e.target
-//     var correct = selectedButton.dataset.correct
-//     setStatusClass(document.body, correct)
-//     Array.from(answerButtonsElement.children).forEach(button => {
-//        setStatusClass(button, button.dataset.correct) 
-//     })
 
-// }
+//get attribute 
 
 
 
@@ -94,27 +91,7 @@ function askQuestion() {
 
 
 
-// showQuestion(shuffledQuestions[currentQuestions])
-
-// nextQuestion()
-
-
-
-// resetState()
 
 
 
 
-
-
-
-
-// function resetState() {
-
-// }
-  
-
-
-// function setStatusClass() {
-    
-// }
