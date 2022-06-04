@@ -3,6 +3,11 @@ var questionElement = document.getElementById("question")
 var answerButtonsElement = document.getElementById("answerBtns")
 var shuffledQuestions, currentQuestions
 var btn1= document.getElementById("Btn1")
+var btn2= document.getElementById("Btn2")
+var btn3= document.getElementById("Btn3")
+var btn4= document.getElementById("Btn4")
+
+
 var questions = [
     {
       question: "What is 2+2?",
@@ -41,7 +46,13 @@ function askQuestion() {
     var getQuestions = (questions[0].question);
      questionElement.innerHTML = getQuestions
         btn1.innerHTML = questions[0].answers[0].text
+        btn2.innerHTML = questions[0].answers[1].text
+        btn3.innerHTML = questions[0].answers[2].text
+        btn4.innerHTML = questions[0].answers[3].text
      btn1.setAttribute("data-choice", questions[0].answers[0].correct)
+     btn2.setAttribute("data-choice", questions[0].answers[1].false)
+     btn3.setAttribute("data-choice", questions[0].answers[2].false)
+     btn4.setAttribute("data-choice", questions[0].answers[3].false)
      
      console.log(getQuestions)
 }//get attribute 
