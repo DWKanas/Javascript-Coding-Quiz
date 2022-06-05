@@ -1,7 +1,7 @@
 var startButton = document.getElementById("startBtn")
 var questionElement = document.getElementById("question")
 var answerButtonsElement = document.getElementById("answerBtns")
-var timeleft = document.getElementById("countdownTimer")
+var countdownTimer = document.getElementById("countdownTimer")
 var shuffledQuestions, currentQuestions
 var btn1= document.getElementById("Btn1")
 var btn2= document.getElementById("Btn2")
@@ -52,16 +52,16 @@ var questions = [
 
 
 startButton.addEventListener("click", startGame)
-var timeleft = "10";
+var timeleft = 60;
 var timer = setInterval(function(){
   if(timeleft <= 0){
     clearInterval(timer);
-    timeleft.innerHTML = "Finished";
+    countdownTimer.innerHTML = "Finished";
   } else {
-    timeleft.innerHTML = timeleft;
+    countdownTimer.innerHTML = timeleft;
   }
   timeleft -= 1;
-  console.log(timeleft)
+  console.log(countdownTimer)
   return;
 }, 1000);
 
@@ -110,7 +110,9 @@ function checkAnswer() {
         startGame()
     }
     if (btnAttribute === "false") {
-        window.alert("Sorry, Refresh to try again")
+        btn2.style.color = "red"
+        btn3.style.color = "red"
+        btn4.style.color = "red"
     } 
     
 }};
@@ -122,31 +124,7 @@ function checkAnswer() {
     
   
 
-// function test(){
-//     if (btnAttribute === true) {
-//     console.log("button is true")
-//     return;
-//     }}
-    
-    
-// function checkButton() {
 
-//     var btnAttribute = btn1.getAttribute("data-choice")
-
-//     console.log(btnAttribute)
-   
-//     if (btnAttribute === true) {
-//         askQuestion()
-//         return;
-//     }
-// }
-    
-    
-  
-
-
-
-//get attribute 
 
 
 
