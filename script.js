@@ -11,39 +11,39 @@ var btn4= document.getElementById("Btn4")
 
 var questions = [
     {
-      question: "What is 2+2?",
+      question: "What type refers to a tue or false value? ",
       answers: [
-          {text: "4", correct: true},
-          {text: "22", correct: false},
-          {text: "18", correct: false},
-          {text: "5", correct: false}
+          {text: "Boolean", correct: true},
+          {text: "variable", correct: false},
+          {text: "integer", correct: false},
+          {text: "string", correct: false}
       ]  
     },
     {
-        question: "What is 5+5?",
+        question: "What is used to create a name that holds information?",
         answers: [
-            {text: "10", correct: true},
-            {text: "2", correct: false},
-            {text: "34", correct: false},
-            {text: "8", correct: false}
+            {text: "variable", correct: true},
+            {text: "string", correct: false},
+            {text: "boolean", correct: false},
+            {text: "object", correct: false}
         ]  
     },
     {
-        question: "What is 2-1?",
+        question: "What is called when an app rescales to fit screen size?",
         answers: [
-            {text: "1", correct: true},
-            {text: "0", correct: false},
-            {text: "56", correct: false},
-            {text: "idk", correct: false}
+            {text: "Responsive Web Design", correct: true},
+            {text: "Scaling Design", correct: false},
+            {text: "Screen Resizing", correct: false},
+            {text: "Shrinking/Growing", correct: false}
         ]  
     },
     {
-        question: "What is 6*2?",
+        question: "What is a section of code that will run repeatedly until conditions are met?",
         answers: [
-            {text: "12", correct: true},
-            {text: "83", correct: false},
-            {text: "2.3", correct: false},
-            {text: "no", correct: false}
+            {text: "Loop", correct: true},
+            {text: "Array", correct: false},
+            {text: "Object", correct: false},
+            {text: "If/Else", correct: false}
         ]  
     }
 
@@ -58,7 +58,7 @@ function startGame() {
     currentQuestions = 0
     console.log("Started")
     startButton.style.display = 'none'
-    var timeleft = 10;
+    var timeleft = 60;
 var timer = setInterval(function(){
   if(timeleft <= 0){
     clearInterval(timer);
