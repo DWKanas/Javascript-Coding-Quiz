@@ -51,6 +51,18 @@ var questions = [
 ]
 
 
+var timeleft = 60;
+var timer = setInterval(function(){
+if(timeleft <= 0){
+clearInterval(timer);
+window.alert("Time is Up! Refresh to try again.");
+} else {
+countdownTimer.innerHTML = timeleft;
+}
+timeleft -= 1;
+console.log(timeleft)
+return;
+}, 1000);
 startButton.addEventListener("click", startGame)
 
 function startGame() {
@@ -58,18 +70,6 @@ function startGame() {
     currentQuestions = 0
     console.log("Started")
     startButton.style.display = 'none'
-    var timeleft = 60;
-var timer = setInterval(function(){
-  if(timeleft <= 0){
-    clearInterval(timer);
-    window.alert("Time is Up! Refresh to try again.");
-  } else {
-    countdownTimer.innerHTML = timeleft;
-  }
-  timeleft -= 1;
-  console.log(timeleft)
-  return;
-}, 1000);
 
     askQuestion()
 };
