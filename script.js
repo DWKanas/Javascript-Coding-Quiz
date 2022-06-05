@@ -1,6 +1,7 @@
 var startButton = document.getElementById("startBtn")
 var questionElement = document.getElementById("question")
 var answerButtonsElement = document.getElementById("answerBtns")
+var timeleft = document.getElementById("countdownTimer")
 var shuffledQuestions, currentQuestions
 var btn1= document.getElementById("Btn1")
 var btn2= document.getElementById("Btn2")
@@ -51,13 +52,29 @@ var questions = [
 
 
 startButton.addEventListener("click", startGame)
+var timeleft = "10";
+var timer = setInterval(function(){
+  if(timeleft <= 0){
+    clearInterval(timer);
+    timeleft.innerHTML = "Finished";
+  } else {
+    timeleft.innerHTML = timeleft;
+  }
+  timeleft -= 1;
+  console.log(timeleft)
+  return;
+}, 1000);
+
 function startGame() {
     shuffledQuestions = questions.sort(() => Math.random() - .5)
     currentQuestions = 0
     console.log("Started")
     startButton.style.display = 'none'
+
     askQuestion()
 };
+
+
 
 function askQuestion() {
     
@@ -75,7 +92,7 @@ function askQuestion() {
      checkAnswer()
 };
     
-    // btn1.addEventListener("click",checkAnswer)
+   
 
 
 
@@ -88,12 +105,14 @@ function checkAnswer() {
     console.log(btnAttribute)
 
     if (btnAttribute === "true") {
+        btn1.style.color = "green";
+        console.log("CLICKED!");
+        startGame()
     }
+    if (btnAttribute === "false") {
+        window.alert("Sorry, Refresh to try again")
+    } 
     
-    
-    // btn1.style.color = "green";
-    console.log("CLICKED!");
-    startGame()
 }};
 
         
