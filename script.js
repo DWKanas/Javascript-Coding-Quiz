@@ -21,8 +21,8 @@ var questions = [
     {
         question: "What is 5+5?",
         answers: [
-            {text: "2", correct: false},
             {text: "10", correct: true},
+            {text: "2", correct: false},
             {text: "34", correct: false},
             {text: "8", correct: false}
         ]  
@@ -30,8 +30,8 @@ var questions = [
     {
         question: "What is 2-1?",
         answers: [
-            {text: "1", correct: false},
-            {text: "0", correct: true},
+            {text: "1", correct: true},
+            {text: "0", correct: false},
             {text: "56", correct: false},
             {text: "idk", correct: false}
         ]  
@@ -39,8 +39,8 @@ var questions = [
     {
         question: "What is 6*2?",
         answers: [
-            {text: "12", correct: false},
-            {text: "83", correct: true},
+            {text: "12", correct: true},
+            {text: "83", correct: false},
             {text: "2.3", correct: false},
             {text: "no", correct: false}
         ]  
@@ -57,7 +57,7 @@ function startGame() {
     console.log("Started")
     startButton.style.display = 'none'
     askQuestion()
-}
+};
 
 function askQuestion() {
     
@@ -71,10 +71,59 @@ function askQuestion() {
      btn2.setAttribute("data-choice", questions[0].answers[1].false)
      btn3.setAttribute("data-choice", questions[0].answers[2].false)
      btn4.setAttribute("data-choice", questions[0].answers[3].false)
-     
      console.log(getQuestions)
-}
+     checkAnswer()
+};
+    
+    // btn1.addEventListener("click",checkAnswer)
 
+
+
+
+function checkAnswer() {
+    btn1.onclick = function(){
+        
+    var btnAttribute = btn1.getAttribute("data-choice")
+
+    console.log(btnAttribute)
+
+    if (btnAttribute === "true") {
+    }
+    
+    
+    // btn1.style.color = "green";
+    console.log("CLICKED!");
+    startGame()
+}};
+
+        
+        
+       
+      
+    
+  
+
+// function test(){
+//     if (btnAttribute === true) {
+//     console.log("button is true")
+//     return;
+//     }}
+    
+    
+// function checkButton() {
+
+//     var btnAttribute = btn1.getAttribute("data-choice")
+
+//     console.log(btnAttribute)
+   
+//     if (btnAttribute === true) {
+//         askQuestion()
+//         return;
+//     }
+// }
+    
+    
+  
 
 
 
