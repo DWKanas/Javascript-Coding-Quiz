@@ -52,24 +52,24 @@ var questions = [
 
 
 startButton.addEventListener("click", startGame)
-var timeleft = 60;
-var timer = setInterval(function(){
-  if(timeleft <= 0){
-    clearInterval(timer);
-    countdownTimer.innerHTML = "Finished";
-  } else {
-    countdownTimer.innerHTML = timeleft;
-  }
-  timeleft -= 1;
-  console.log(countdownTimer)
-  return;
-}, 1000);
 
 function startGame() {
     shuffledQuestions = questions.sort(() => Math.random() - .5)
     currentQuestions = 0
     console.log("Started")
     startButton.style.display = 'none'
+    var timeleft = 10;
+var timer = setInterval(function(){
+  if(timeleft <= 0){
+    clearInterval(timer);
+    window.alert("Time is Up! Refresh to try again.");
+  } else {
+    countdownTimer.innerHTML = timeleft;
+  }
+  timeleft -= 1;
+  console.log(timeleft)
+  return;
+}, 1000);
 
     askQuestion()
 };
@@ -90,6 +90,9 @@ function askQuestion() {
      btn4.setAttribute("data-choice", questions[0].answers[3].false)
      console.log(getQuestions)
      checkAnswer()
+     checkAnswer1()
+     checkAnswer2()
+     checkAnswer3()
 };
     
    
@@ -110,6 +113,66 @@ function checkAnswer() {
         startGame()
     }
     if (btnAttribute === "false") {
+        btn2.style.color = "red"
+        btn3.style.color = "red"
+        btn4.style.color = "red"
+    } 
+    
+}};
+
+function checkAnswer1() {
+    btn2.onclick = function(){
+        
+    var btnAttribute2 = btn2.getAttribute("data-choice")
+
+    console.log(btnAttribute2)
+
+    if (btnAttribute2 === "false") {
+        btn2.style.color = "green";
+        console.log("CLICKED!");
+        startGame()
+    }
+    if (btnAttribute2 === "false") {
+        btn2.style.color = "red"
+        btn3.style.color = "red"
+        btn4.style.color = "red"
+    } 
+    
+}};
+
+function checkAnswer2() {
+    btn3.onclick = function(){
+        
+    var btnAttribute3 = btn3.getAttribute("data-choice")
+
+    console.log(btnAttribute3)
+
+    if (btnAttribute3 === "false") {
+        btn3.style.color = "green";
+        console.log("CLICKED!");
+        startGame()
+    }
+    if (btnAttribute3 === "false") {
+        btn2.style.color = "red"
+        btn3.style.color = "red"
+        btn4.style.color = "red"
+    } 
+    
+}};
+
+function checkAnswer3() {
+    btn4.onclick = function(){
+        
+    var btnAttribute4 = btn4.getAttribute("data-choice")
+
+    console.log(btnAttribute4)
+
+    if (btnAttribute4 === "false") {
+        btn1.style.color = "green";
+        console.log("CLICKED!");
+        startGame()
+    }
+    if (btnAttribute4 === "false") {
         btn2.style.color = "red"
         btn3.style.color = "red"
         btn4.style.color = "red"
